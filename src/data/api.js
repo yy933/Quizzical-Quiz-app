@@ -39,7 +39,7 @@ export default async function fetchApiData() {
 
     return formattedQuestions
   } catch (err) {
-    console.error('Fetch API data eerror: ', err)
+    console.error('Fetch API data error: ', err)
     return []
   }
 }

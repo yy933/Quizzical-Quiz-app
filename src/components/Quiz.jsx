@@ -1,7 +1,7 @@
 import Question from './Question'
 
 export default function Quiz(props) {
-  const { questions, gameStage } = props
+  const { questions, gameStage, onSelectAnswer } = props
   // if questions haven't been fetched yet, show a loading message
   if (questions.length === 0) {
     return (
@@ -13,8 +13,8 @@ export default function Quiz(props) {
   return (
     <section className="quiz-container">
       {/* render questions */}
-      {props.questions.map((question) => (
-        <Question key={question.id} questionData={question} />
+      {questions.map((question) => (
+        <Question key={question.id} questionData={question} onSelect={onSelectAnswer}/>
       ))}
 
       {/* button section */}

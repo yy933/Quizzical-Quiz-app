@@ -17,7 +17,7 @@
 
 - [x] Decode HTML entities：Decode HTML entities in returning data with `he.decode()` 
 
-- [ ] Single choice logic：
+- [x] Single choice logic：
   - When the user click the specific option, change its `isSelected` state.
   - Ensure only one option in each option can be `isSelected === true`
 
