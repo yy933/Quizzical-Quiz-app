@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
 
 export default function Question(props) {
-  const { question, allAnswers } = props.questionData
+  const { question, allAnswers, correctAnswer } = props.questionData
 
   return (
     <div className="question-container">
