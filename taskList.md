@@ -11,11 +11,11 @@
 - [x] add feature: click Start quiz btn and direct to quiz page
 
 ## 3. Data Fetching & Selection
-- [ ] Fetch API data： Fetch API data from Open Trivia Database (with `useEffect` hook, 5 questions per round) 
+- [x] Fetch API data： Fetch API data from Open Trivia Database (with `useEffect` hook, 5 questions per round) 
 
-- [ ] Shuffle array：Create a function that shuffle the array which mixed up with `correct_answer` and `incorrect_answers`. Otherwise the correct answer will always be at the same position.
+- [x] Shuffle array：Create a function that shuffle the array which mixed up with `correct_answer` and `incorrect_answers`. Otherwise the correct answer will always be at the same position.
 
-- [ ] Decode HTML entities：Decode HTML entities in returning data with `he.decode()` 
+- [x] Decode HTML entities：Decode HTML entities in returning data with `he.decode()` 
 
 - [ ] Single choice logic：
   - When the user click the specific option, change its `isSelected` state.
