@@ -7,5 +7,5 @@
 ## 2. UI & Conditional Rendering 
 - [x] Setting gameStage state in `App.jsx` ` ("welcome" | "quiz" | "result")`
 - [x] Create `<Welcome />` component（including title, description, and Start btn）
-- [ ] Createe `<Quiz />` and `<Question />` component（use mock data for now）
-- [ ] add feature: click Start quiz btn and direct to quiz page
+- [x] Create `<Quiz />` and `<Question />` component（use mock data for now）
+- [x] add feature: click Start quiz btn and direct to quiz page

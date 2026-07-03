@@ -27,7 +27,6 @@ body {
 }
 
 #root {
-  max-width: 768px;
   min-height: 100%;
   margin: 0 auto;
   display: flex;
@@ -39,6 +38,7 @@ body {
 
 main {
   width: 100%;
+  max-width: 768px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -98,4 +98,97 @@ main {
   opacity: 0.3;
   z-index: 0;
   pointer-events: none;
+}
+
+/* Quiz container */
+.quiz-container {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Question container */
+.question-container {
+  margin-bottom: 1.5rem;
+}
+
+.question-text {
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+  margin: 0 0 0.8rem 0;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* answer container */
+.answers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+/* answer button initial style */
+.answer-btn {
+  background-color: transparent;
+  color: var(--color-text-main);
+  border: 1.5px solid var(--color-btn-border);
+  padding: 0.4rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* answer button Hover effect */
+.answer-btn:hover {
+  background-color: #ebeefc;
+}
+
+/* answer button Selected style */
+.answer-btn.selected {
+  background-color: var(--color-selected);
+  border-color: var(--color-selected);
+}
+
+/* question divider */
+.question-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0;
+}
+
+/* quiz footer */
+.quiz-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.score-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.footer-btn {
+  background-color: var(--color-primary);
+  color: #f5f7fb;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.footer-btn:hover {
+  opacity: 0.9;
 }

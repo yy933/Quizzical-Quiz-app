@@ -1,13 +1,11 @@
-import React from 'react'
-
-export default function Welcome(props) {
+export default function Welcome({ onStart }) {
   return (
-    <div className="welcome-container">
+    <section className="welcome-container">
       <h1 className="welcome-title">Quizzical</h1>
       <p className="welcome-text">Some description if needed</p>
-      <button className="welcome-btn" onClick={props.onStart}>
+      <button className="welcome-btn" onClick={onStart}>
         Start quiz
       </button>
-    </div>
+    </section>
   )
 }
