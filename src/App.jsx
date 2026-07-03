@@ -2,9 +2,11 @@ import { useState } from 'react'
 import backgroundImage from './assets/background-image.png'
 import Welcome from './components/Welcome'
 import Quiz from './components/Quiz'
+import fetchApiData from './data/api'
 function App() {
   // gameStage: "welcome"|"quiz"|"result"
   const [gameStage, setGameStage] = useState('welcome')
+
   return (
     <main>
       {/* background blobs */}
