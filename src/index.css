@@ -1,0 +1,36 @@
+:root {
+  /* primary colors */
+  --color-primary: #4d5b9e; /* Start quiz button */
+  --color-text-main: #293264; /* Main text color */
+
+  /* btn color under different conditions */
+  --color-btn-border: #4d5b9e; /* Unselected button border */
+  --color-selected: #d6dbf5; /* Selected button light blue */
+  --color-correct: #94d7a2; /* Correct answer green */
+  --color-incorrect: #f8bcbc; /* Incorrect answer pink */
+  --color-disabled-text: #8f96b3; /* Disabled text color */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f5f7fb;
+  font-family: 'Inter', sans-serif;
+  color: #293264;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
