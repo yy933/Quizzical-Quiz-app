@@ -23,7 +23,7 @@
 
 
 ## 4. Checking Answers & Game Reset
-- [ ] Check Answers:
+- [x] Check Answers:
   - When the user clicks the footer button, change the `gameStage` to `"result"`.
   - Calculate the total score by checking how many objects have `isSelected === true` and `value === correctAnswer`.
 - [ ] Conditional Styling (Result Visuals):

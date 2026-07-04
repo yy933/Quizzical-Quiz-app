@@ -12,13 +12,13 @@ export default async function fetchApiData() {
     const data = await res.json()
 
     const formattedQuestions = data.results.map((question) => {
-      const decodedCorreectAnswer = decode(question.correct_answer)
+      const decodedCorrectAnswer = decode(question.correct_answer)
       const decodedIncorrectAnswers = question.incorrect_answers.map((answer) =>
         decode(answer),
       )
       const combinedAnswers = [
         ...decodedIncorrectAnswers,
-        decodedCorreectAnswer,
+        decodedCorrectAnswer,
       ]
       const shuffledAnswers = shuffleArray(combinedAnswers)
       const allAnswers = shuffledAnswers.map((answer) => {
@@ -28,11 +28,12 @@ export default async function fetchApiData() {
           isSelected: false,
         }
       })
+      console.log('Correct answer: ', decodedCorrectAnswer)
 
       return {
         id: nanoid(),
         question: decode(question.question),
-        correctAnswer: decodedCorreectAnswer,
+        correctAnswer: decodedCorrectAnswer,
         allAnswers: allAnswers,
       }
     })

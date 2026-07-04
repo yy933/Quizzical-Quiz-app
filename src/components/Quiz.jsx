@@ -1,7 +1,7 @@
 import Question from './Question'
 
 export default function Quiz(props) {
-  const { questions, gameStage, onSelectAnswer } = props
+  const { questions, gameStage, onSelectAnswer, onCheckAnswers, score } = props
   // if questions haven't been fetched yet, show a loading message
   if (questions.length === 0) {
     return (
@@ -20,9 +20,9 @@ export default function Quiz(props) {
       {/* button section */}
       <div className="quiz-footer">
         {gameStage === 'result' && (
-          <span className="score-text">You scored 3/5 correct answers</span>
+          <span className="score-text">You scored {score}/5 correct answers</span>
         )}
-        <button className="footer-btn">
+        <button className="footer-btn" onClick={onCheckAnswers}>
           {gameStage === 'quiz' ? 'Check answers' : 'Play again'}
         </button>
       </div>

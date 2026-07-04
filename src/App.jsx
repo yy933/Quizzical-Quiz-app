@@ -7,6 +7,7 @@ function App() {
   // gameStage: "welcome"|"quiz"|"result"
   const [gameStage, setGameStage] = useState('welcome')
   const [questions, setQuestions] = useState([])
+  const [score, setScore] = useState(0)
 
   useEffect(() => {
     if (gameStage === 'quiz') {
@@ -29,7 +30,7 @@ function App() {
           // check if this is the answer we want to update
           if (answer.id === answerId) {
             return { ...answer, isSelected: true } // if th answer is selected, set isSelected to true
-          } else{
+          } else {
             return { ...answer, isSelected: false }
           }
         })
@@ -40,6 +41,31 @@ function App() {
         }
       })
     })
+  }
+
+  function checkAnswers() {
+    setGameStage('result')
+    
+    const finalScore = questions.reduce((totalScore, question) => {
+      const isCorrect = question.allAnswers.some(
+        (answer) =>
+          answer.isSelected && answer.value === question.correctAnswer,
+      ) 
+      return isCorrect ? totalScore + 1 : totalScore
+    }, 0) 
+
+    setScore(finalScore)
+
+    setQuestions((prevQuestions) => {
+      return prevQuestions.map((question) => {
+        const isCorrect = question.allAnswers.some(
+          (answer) =>
+            answer.isSelected && answer.value === question.correctAnswer,
+        )
+        return { ...question, isCorrect: isCorrect }
+      })
+    })
+    
   }
 
   return (
@@ -55,7 +81,9 @@ function App() {
         <Quiz
           gameStage={gameStage}
           questions={questions}
+          score={score}
           onSelectAnswer={handleSelectedAnswer}
+          onCheckAnswers={checkAnswers}
         />
       )}
     </main>
