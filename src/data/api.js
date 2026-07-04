@@ -16,10 +16,7 @@ export default async function fetchApiData() {
       const decodedIncorrectAnswers = question.incorrect_answers.map((answer) =>
         decode(answer),
       )
-      const combinedAnswers = [
-        ...decodedIncorrectAnswers,
-        decodedCorrectAnswer,
-      ]
+      const combinedAnswers = [...decodedIncorrectAnswers, decodedCorrectAnswer]
       const shuffledAnswers = shuffleArray(combinedAnswers)
       const allAnswers = shuffledAnswers.map((answer) => {
         return {
@@ -28,7 +25,6 @@ export default async function fetchApiData() {
           isSelected: false,
         }
       })
-      console.log('Correct answer: ', decodedCorrectAnswer)
 
       return {
         id: nanoid(),
