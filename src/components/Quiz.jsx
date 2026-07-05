@@ -14,13 +14,20 @@ export default function Quiz(props) {
     <section className="quiz-container">
       {/* render questions */}
       {questions.map((question) => (
-        <Question key={question.id} questionData={question} onSelect={onSelectAnswer}/>
+        <Question
+          key={question.id}
+          questionData={question}
+          onSelect={onSelectAnswer}
+          gameStage={gameStage}
+        />
       ))}
 
       {/* button section */}
       <div className="quiz-footer">
         {gameStage === 'result' && (
-          <span className="score-text">You scored {score}/5 correct answers</span>
+          <span className="score-text">
+            You scored {score}/5 correct answers
+          </span>
         )}
         <button className="footer-btn" onClick={onCheckAnswers}>
           {gameStage === 'quiz' ? 'Check answers' : 'Play again'}

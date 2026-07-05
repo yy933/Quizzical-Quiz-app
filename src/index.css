@@ -154,6 +154,26 @@ main {
   border-color: var(--color-selected);
 }
 
+.answer-btn.correct {
+  background-color: var(--color-correct);
+  border-color: var(--color-correct);
+  opacity: 1;
+}
+
+.answer-btn.incorrect {
+  background-color: var(--color-incorrect);
+  border-color: var(--color-incorrect);
+  opacity: 0.8;
+}
+
+.answer-btn.dimmed {
+  background-color: #ebeefc;
+  border-color: #ebeefc;
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 /* question divider */
 .question-divider {
   border: none;
