@@ -259,6 +259,13 @@ main {
   opacity: 0.9;
 }
 
+.footer-btn:disabled {
+  background-color: #A1A9C3; 
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
 .footer-btn-container {
   display: flex;
   align-items: center;

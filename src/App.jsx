@@ -19,6 +19,12 @@ function App() {
     }
   }, [gameStage])
 
+  const allAnswered =
+    questions.length > 0 &&
+    questions.every((question) => {
+      return question.allAnswers.some((answer) => answer.isSelected)
+    })
+
   function handleSelectedAnswer(questionId, answerId) {
     if (gameStage !== 'quiz') return
     setQuestions((prevQuestions) => {
@@ -87,6 +93,7 @@ function App() {
           gameStage={gameStage}
           questions={questions}
           score={score}
+          allAnswered={allAnswered}
           onSelectAnswer={handleSelectedAnswer}
           onCheckAnswers={checkAnswers}
           onResetGame={resetGame}

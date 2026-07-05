@@ -7,6 +7,7 @@ export default function Quiz(props) {
     onSelectAnswer,
     onCheckAnswers,
     score,
+    allAnswered,
     onResetGame,
   } = props
   // if questions haven't been fetched yet, show a loading message
@@ -50,6 +51,7 @@ export default function Quiz(props) {
           <button
             className="footer-btn"
             onClick={gameStage === 'quiz' ? onCheckAnswers : onResetGame}
+            disabled={gameStage === 'quiz' && !allAnswered}
           >
             {gameStage === 'quiz' ? 'Check answers' : 'Play again'}
           </button>
