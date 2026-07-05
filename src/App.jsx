@@ -45,14 +45,14 @@ function App() {
 
   function checkAnswers() {
     setGameStage('result')
-    
+
     const finalScore = questions.reduce((totalScore, question) => {
       const isCorrect = question.allAnswers.some(
         (answer) =>
           answer.isSelected && answer.value === question.correctAnswer,
-      ) 
+      )
       return isCorrect ? totalScore + 1 : totalScore
-    }, 0) 
+    }, 0)
 
     setScore(finalScore)
 
@@ -65,7 +65,12 @@ function App() {
         return { ...question, isCorrect: isCorrect }
       })
     })
-    
+  }
+
+  function resetGame() {
+    setGameStage('quiz')
+    setScore(0)
+    setQuestions([])
   }
 
   return (
@@ -84,6 +89,8 @@ function App() {
           score={score}
           onSelectAnswer={handleSelectedAnswer}
           onCheckAnswers={checkAnswers}
+          onResetGame={resetGame}
+          onNavigateHome={() => setGameStage('welcome')}
         />
       )}
     </main>

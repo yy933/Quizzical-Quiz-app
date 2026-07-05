@@ -212,3 +212,26 @@ main {
 .footer-btn:hover {
   opacity: 0.9;
 }
+
+.footer-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.secondary-btn {
+  background: none;
+  border: none;
+  color: #4d5b9e;
+  text-decoration: underline;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.secondary-btn:hover {
+  opacity: 1;
+}

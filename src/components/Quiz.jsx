@@ -1,7 +1,14 @@
 import Question from './Question'
 
 export default function Quiz(props) {
-  const { questions, gameStage, onSelectAnswer, onCheckAnswers, score } = props
+  const {
+    questions,
+    gameStage,
+    onSelectAnswer,
+    onCheckAnswers,
+    score,
+    onResetGame,
+  } = props
   // if questions haven't been fetched yet, show a loading message
   if (questions.length === 0) {
     return (
@@ -29,9 +36,23 @@ export default function Quiz(props) {
             You scored {score}/5 correct answers
           </span>
         )}
-        <button className="footer-btn" onClick={onCheckAnswers}>
-          {gameStage === 'quiz' ? 'Check answers' : 'Play again'}
-        </button>
+        <div className="footer-btn-container">
+          {gameStage === 'result' && (
+            <button
+              className="secondary-btn"
+              onClick={() => props.onNavigateHome()}
+            >
+              Back to home
+            </button>
+          )}
+
+          <button
+            className="footer-btn"
+            onClick={gameStage === 'quiz' ? onCheckAnswers : onResetGame}
+          >
+            {gameStage === 'quiz' ? 'Check answers' : 'Play again'}
+          </button>
+        </div>
       </div>
     </section>
   )
