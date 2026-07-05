@@ -109,6 +109,52 @@ main {
   flex-direction: column;
 }
 
+/* ==========================================================================
+   Loading Spinner styles
+   ========================================================================== */
+
+/* Align loading spinner */
+.quiz-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 1.5rem;
+}
+
+/* Spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f5f7fb;
+  border-top: 5px solid #4d5b9e;
+  border-radius: 50%;
+
+  /* spinner animation */
+  animation: spin 1s linear infinite;
+}
+
+/* Loading text styles */
+.loading-text {
+  color: #293264;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* define spinner animation details */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* initial rotation angle*/
+  }
+  100% {
+    transform: rotate(
+      360deg
+    ); /* final rotation angle (complete a full rotation) */
+  }
+}
+
 /* Question container */
 .question-container {
   margin-bottom: 1.5rem;

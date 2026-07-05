@@ -12,8 +12,9 @@ export default function Quiz(props) {
   // if questions haven't been fetched yet, show a loading message
   if (questions.length === 0) {
     return (
-      <div className="quiz-container" style={{ textAlign: 'center' }}>
-        <h2>Loading questions...</h2>
+      <div className="quiz-container quiz-loading">
+        <div className="spinner"></div>
+        <h2 className="loading-text">Loading questions...</h2>
       </div>
     )
   }
